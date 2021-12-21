@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-//Change line 21 to add the employee to your collection eg. respository.add(new employee(employeeData))
+//Change line 19 to add the employee to your collection eg. respository.add(new employee(employeeData))
 public class EmployeeCSVParser {
 
     public static void createEmployeeData() {
