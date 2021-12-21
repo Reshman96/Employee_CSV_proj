@@ -17,7 +17,6 @@ public class Employee {
     private int salary;
 
     public Employee(String[] employeeData) {
-
         this.setEmpId(Integer.parseInt(employeeData[0]));
     }
 
