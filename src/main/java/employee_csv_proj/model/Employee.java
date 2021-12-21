@@ -18,14 +18,15 @@ public class Employee {
 
     public Employee(String[] employeeData) {
         this.setEmpId(Integer.parseInt(employeeData[0]));
-        this.setFirstName(employeeData[1]);
-        this.setMiddleInitial(employeeData[2]);
-        this.setLastName(employeeData[3]);
-        this.setGender(employeeData[4]);
-        this.setEmail(employeeData[5]);
-        this.setDob(employeeData[6]);
-        this.setDateOfJoining(employeeData[7]);
-        this.setSalary(Integer.parseInt(employeeData[8]));
+        this.setNamePrefix(employeeData[1]);
+        this.setFirstName(employeeData[2]);
+        this.setMiddleInitial(employeeData[3]);
+        this.setLastName(employeeData[4]);
+        this.setGender(employeeData[5]);
+        this.setEmail(employeeData[6]);
+        this.setDob(employeeData[7]);
+        this.setDateOfJoining(employeeData[8]);
+        this.setSalary(Integer.parseInt(employeeData[9]));
     }
 
 
