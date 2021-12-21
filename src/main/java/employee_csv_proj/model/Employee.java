@@ -33,7 +33,7 @@ public class Employee {
     //database george
     //reshman hashmap
     //readme
-    //input + clean data
+    // input + clean data
 
     public int getEmpId() {
         return empId;
