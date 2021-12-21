@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Config {
-    //src/main/resources/config.properties
+    // src/main/resources/config.properties
     private static final Properties config;
 
     static {

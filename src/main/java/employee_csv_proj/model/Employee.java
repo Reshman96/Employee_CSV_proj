@@ -18,8 +18,22 @@ public class Employee {
 
     public Employee(String[] employeeData) {
         this.setEmpId(Integer.parseInt(employeeData[0]));
+        this.setNamePrefix(employeeData[1]);
+        this.setFirstName(employeeData[2]);
+        this.setMiddleInitial(employeeData[3]);
+        this.setLastName(employeeData[4]);
+        this.setGender(employeeData[5]);
+        this.setEmail(employeeData[6]);
+        this.setDob(employeeData[7]);
+        this.setDateOfJoining(employeeData[8]);
+        this.setSalary(Integer.parseInt(employeeData[9]));
     }
 
+
+    //database george
+    //reshman hashmap
+    //readme
+    // input + clean data
 
     public int getEmpId() {
         return empId;
