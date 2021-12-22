@@ -22,5 +22,16 @@ public class Config {
         return config.getProperty("employee_csv_file_location");
     }
 
-
+    public static String dbConnectionURL(){
+        return config.getProperty("db_connection");
+    }
+    public static String dbUsernameURL(){
+        return config.getProperty("username");
+    }
+    public static String dbPasswordURL(){
+        return config.getProperty("password");
+    }
+    public static String dbNameURL(){
+        return config.getProperty("db_name");
+    }
 }
