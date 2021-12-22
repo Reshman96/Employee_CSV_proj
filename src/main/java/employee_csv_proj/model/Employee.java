@@ -29,12 +29,6 @@ public class Employee {
         this.setSalary(Integer.parseInt(employeeData[9]));
     }
 
-
-    //database george
-    //reshman hashmap
-    //readme
-    // input + clean data
-
     public int getEmpId() {
         return empId;
     }
