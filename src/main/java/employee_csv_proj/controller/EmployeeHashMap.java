@@ -2,6 +2,7 @@ package employee_csv_proj.controller;
 
 import employee_csv_proj.model.Employee;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class EmployeeHashMap {
@@ -13,5 +14,9 @@ public class EmployeeHashMap {
 
     public static void addEmployee(int employeeId, Employee employee) {
         employeeHashMap.put(employeeId, employee);
+    }
+
+    public static Collection<Employee> getHashMapValues(){
+        return employeeHashMap.values();
     }
 }
