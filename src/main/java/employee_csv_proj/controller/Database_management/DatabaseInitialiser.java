@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DatabaseInitialiser {
+
     private static void initialiseDb(){
         try {
             Connection connection = ConnectionManager.dbInitialiseConnection();
