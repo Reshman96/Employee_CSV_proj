@@ -12,8 +12,8 @@ import java.sql.SQLException;
 public class ConnectionManager {
 
     /**
-     * Initialises the database connection
-     * @return
+     * Initialises the connection to the MySQL database.
+     * @return Gives back the connection needed to database.
      */
     public static Connection dbInitialiseConnection(){
         Connection connection = null;
@@ -26,6 +26,10 @@ public class ConnectionManager {
         return connection;
     }
 
+    /**
+     * Initialises the connection to the MySQL database employees table.
+     * @return Gives back the connection needed to employee table in the database.
+     */
     public static Connection dbEmployeeConnection(){
         Connection connection = null;
 
@@ -37,6 +41,10 @@ public class ConnectionManager {
         return connection;
     }
 
+    /**
+     * Given a connection previously established, the method will close the connection.
+     * @param connection Needs a currently active connection.
+     */
     public static void closeConnection(Connection connection){
         try {
             connection.close();
