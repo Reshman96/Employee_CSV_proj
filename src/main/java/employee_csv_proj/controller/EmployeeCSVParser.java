@@ -17,6 +17,7 @@ public class EmployeeCSVParser {
             for(String employeeRecord = bufferedReader.readLine(); employeeRecord != null; employeeRecord = bufferedReader.readLine()) {
                 String[] employeeData = employeeRecord.split(",");
                 Employee employee = new Employee(employeeData);
+                EmployeeHashMap.addEmployee(employee.getEmpId(), employee);
             }
         } catch (IOException e) {
             e.printStackTrace();
