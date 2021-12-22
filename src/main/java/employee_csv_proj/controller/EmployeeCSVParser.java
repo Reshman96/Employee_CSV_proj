@@ -1,6 +1,7 @@
 package employee_csv_proj.controller;
 
 import employee_csv_proj.config.Config;
+import employee_csv_proj.controller.Database_management.EmployeeDAO;
 import employee_csv_proj.model.Employee;
 
 import java.io.BufferedReader;
@@ -25,6 +26,9 @@ public class EmployeeCSVParser {
     }
 
     public static void main(String[] args) {
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        EmployeeHashMap employeeHashMap = new EmployeeHashMap();
         createEmployeeData();
+        employeeDAO.addEmployees(EmployeeHashMap.getHashMapValues());
     }
 }
