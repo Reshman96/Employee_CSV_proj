@@ -21,7 +21,6 @@ public class Config {
     public static String employeeCSVFileLocation() {
         return config.getProperty("employee_csv_file_location");
     }
-
     public static String dbConnectionURL(){
         return config.getProperty("db_connection");
     }

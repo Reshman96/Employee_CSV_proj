@@ -6,19 +6,25 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Class which is responsible for establishing the connections needed to access the MySQL database.
+ */
 public class ConnectionManager {
 
+    /**
+     * Initialises the database connection
+     * @return
+     */
     public static Connection dbInitialiseConnection(){
-    Connection connection = null;
-
-    try {
-        connection = DriverManager.getConnection(Config.dbConnectionURL(), Config.dbUsernameURL(), Config.dbPasswordURL());
-        System.out.println("Connected to db");
-    } catch (SQLException e) {
-        e.printStackTrace();
+        Connection connection = null;
+         try {
+             connection = DriverManager.getConnection(Config.dbConnectionURL(), Config.dbUsernameURL(), Config.dbPasswordURL());
+             System.out.println("Connected to db");
+         } catch (SQLException e) {
+             e.printStackTrace();
+         }
+        return connection;
     }
-    return connection;
-}
 
     public static Connection dbEmployeeConnection(){
         Connection connection = null;
