@@ -19,4 +19,8 @@ public class EmployeeHashMap {
     public static Collection<Employee> getHashMapValues(){
         return employeeHashMap.values();
     }
+
+    public static HashMap<Integer, Employee> getHashMap() {
+        return employeeHashMap;
+    }
 }
