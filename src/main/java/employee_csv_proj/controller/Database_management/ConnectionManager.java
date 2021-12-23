@@ -36,7 +36,6 @@ public class ConnectionManager {
      */
     public static Connection dbEmployeeConnection(){
         Connection connection = null;
-        CSVLogManager.getInstance().setupLog("src/main/java/employee_csv_proj/controller/logging/ConnectionManager.log");
         try {
             connection = DriverManager.getConnection(Config.dbConnectionURL() + "/" + Config.dbNameURL(), Config.dbUsernameURL(), Config.dbPasswordURL());
             CSVLogManager.getInstance().logMessage(Level.INFO, "Connection to MySQL database initialised!");
@@ -52,7 +51,6 @@ public class ConnectionManager {
      * @param connection Needs a currently active connection.
      */
     public static void closeConnection(Connection connection){
-        CSVLogManager.getInstance().setupLog("src/main/java/employee_csv_proj/controller/logging/ConnectionManager.log");
         try {
             connection.close();
             CSVLogManager.getInstance().logMessage(Level.INFO, "Connection to closed");
