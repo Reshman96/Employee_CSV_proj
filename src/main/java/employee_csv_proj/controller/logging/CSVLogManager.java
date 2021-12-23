@@ -18,9 +18,9 @@ public class CSVLogManager {
         return instance;
     }
 
-    public void setupLog() {
+    public void setupLog(String fileLocation) {
         try {
-            Handler fileHandler = new FileHandler("src/main/java/employee_csv_proj/controller/logging/employeeCSVLog.log",true);
+            Handler fileHandler = new FileHandler(fileLocation,true);
             logger.addHandler(fileHandler);
             fileHandler.setFormatter(new SimpleFormatter());
         } catch (IOException e) {
