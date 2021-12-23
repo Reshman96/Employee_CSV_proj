@@ -1,10 +1,12 @@
 package employee_csv_proj.controller.Database_management;
 
 import employee_csv_proj.config.Config;
+import employee_csv_proj.controller.logging.CSVLogManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 /**
  * Class which is responsible for establishing the connections needed to access the MySQL database.
@@ -17,10 +19,12 @@ public class ConnectionManager {
      */
     public static Connection dbInitialiseConnection(){
         Connection connection = null;
+        CSVLogManager.getInstance().setupLog("src/main/java/employee_csv_proj/controller/logging/ConnectionManager.log");
          try {
              connection = DriverManager.getConnection(Config.dbConnectionURL(), Config.dbUsernameURL(), Config.dbPasswordURL());
-             System.out.println("Connected to db");
+             CSVLogManager.getInstance().logMessage(Level.INFO, "Connected to database!");
          } catch (SQLException e) {
+             CSVLogManager.getInstance().logMessage(Level.WARNING, "Problem connecting to the database");
              e.printStackTrace();
          }
         return connection;
@@ -32,10 +36,12 @@ public class ConnectionManager {
      */
     public static Connection dbEmployeeConnection(){
         Connection connection = null;
-
+        CSVLogManager.getInstance().setupLog("src/main/java/employee_csv_proj/controller/logging/ConnectionManager.log");
         try {
             connection = DriverManager.getConnection(Config.dbConnectionURL() + "/" + Config.dbNameURL(), Config.dbUsernameURL(), Config.dbPasswordURL());
+            CSVLogManager.getInstance().logMessage(Level.INFO, "Connection to MySQL database initialised!");
         } catch (SQLException e) {
+            CSVLogManager.getInstance().logMessage(Level.WARNING, "Problem initialising connection to MySQL database");
             e.printStackTrace();
         }
         return connection;
@@ -46,9 +52,12 @@ public class ConnectionManager {
      * @param connection Needs a currently active connection.
      */
     public static void closeConnection(Connection connection){
+        CSVLogManager.getInstance().setupLog("src/main/java/employee_csv_proj/controller/logging/ConnectionManager.log");
         try {
             connection.close();
+            CSVLogManager.getInstance().logMessage(Level.INFO, "Connection to closed");
         } catch (SQLException e) {
+            CSVLogManager.getInstance().logMessage(Level.WARNING, "Error occurred when closing connection");
             e.printStackTrace();
         }
     }
