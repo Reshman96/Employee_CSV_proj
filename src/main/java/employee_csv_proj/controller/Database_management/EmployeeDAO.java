@@ -5,8 +5,8 @@ import employee_csv_proj.controller.EmployeeHashMap;
 import employee_csv_proj.model.Employee;
 
 import java.sql.*;
-import java.util.Collection;
-import java.util.HashSet;
+import java.sql.Date;
+import java.util.*;
 
 /**
  * A class which is responsible for accessing the MySQL database, by sending and retrieving the employee data.
@@ -70,16 +70,45 @@ public class EmployeeDAO {
         }
     }
 
-//How it works
+    /**
+     * Returns all the database employees to a HashMap.
+     * @param employeeHashMap Requires the new HashMap to insert the data to.
+     */
+    public void setHashmap(EmployeeHashMap employeeHashMap){
+        try {
+            ResultSet resultSet = ConnectionManager.dbEmployeeConnection().createStatement().executeQuery(EmployeesSQL.GET_ALL_EMPLOYEES);
+            while (resultSet.next()){
+                String test = resultSet.getInt(1) +
+                        "," + resultSet.getString(2) +
+                        "," + resultSet.getString(3) +
+                        "," + resultSet.getString(4) +
+                        "," + resultSet.getString(5) +
+                        "," + resultSet.getString(6) +
+                        "," + resultSet.getString(7) +
+                        "," + DateFormatter.correctDate(resultSet.getString(8)) +
+                        "," + DateFormatter.correctDate(resultSet.getString(9)) +
+                        "," + resultSet.getString(10);
+                String[] employeeData = test.split(",");
+                Employee employee = new Employee(employeeData);
+                EmployeeHashMap.addEmployee(employee.getEmpId(), employee);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
+
+//How it works
+//
 //    public static void main(String[] args) {
 //        EmployeeDAO employeeDAO = new EmployeeDAO();
 //        EmployeeHashMap employeeHashMap = new EmployeeHashMap();
-//        Employee employee = new Employee(new String[]{"5", "Mrs", "Jane", "m", "Doe", "F", "fjksfnsdf@hotmail.com", "9/21/1982", "9/21/1982", "45645"});
+//        Employee employee = new Employee(new String[]{"6", "Mrs", "Jane", "m", "Doe", "F", "fjksfnsdf@hotmail.com", "9/21/1982", "9/21/1982", "45645"});
 //        employeeHashMap.addEmployee(employee.getEmpId(),employee);
-//
-//        employeeDAO.addEmployees(employeeHashMap.getHashMapValues());
-//
+//        employeeDAO.addEmployee(employee);
+//        EmployeeHashMap employeeHashMapTwo = new EmployeeHashMap();
+//        employeeDAO.setHashmap(employeeHashMapTwo);
+//        employeeDAO.addEmployees(employeeHashMapTwo.getHashMapValues());
 //
 //    }
 
