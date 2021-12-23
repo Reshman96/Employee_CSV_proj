@@ -17,6 +17,7 @@ public class EmployeeCSVParser {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(Config.employeeCSVFileLocation()));
             bufferedReader.readLine();
+            CSVLogManager.getInstance().setupLog("src/main/java/employee_csv_proj/controller/logging/employeeRecord.log");
             for(String employeeRecord = bufferedReader.readLine(); employeeRecord != null; employeeRecord = bufferedReader.readLine()) {
                 String[] employeeData = employeeRecord.split(",");
                 Employee employee = new Employee(employeeData);
