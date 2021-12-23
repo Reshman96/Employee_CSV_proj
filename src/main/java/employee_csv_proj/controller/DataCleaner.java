@@ -9,7 +9,6 @@ import java.util.logging.Level;
 public class DataCleaner {
 
     public static boolean checkData(HashMap<Integer, Employee> hashMap, Employee employee) {
-        CSVLogManager.getInstance().setupLog("src/main/java/employee_csv_proj/controller/logging/DataCleaner.log");
         for (Employee values : EmployeeHashMap.getHashMapValues()) {
             if (employee.getEmpId() == values.getEmpId()) {
                 // deny employee data since ID already exists
