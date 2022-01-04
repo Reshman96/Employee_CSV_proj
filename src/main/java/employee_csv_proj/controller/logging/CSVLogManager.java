@@ -32,5 +32,4 @@ public class CSVLogManager {
         logger.log(level, message);
     }
 
-
 }
