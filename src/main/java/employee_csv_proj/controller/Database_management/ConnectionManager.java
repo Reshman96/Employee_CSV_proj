@@ -38,7 +38,6 @@ public class ConnectionManager {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(Config.dbConnectionURL() + "/" + Config.dbNameURL(), Config.dbUsernameURL(), Config.dbPasswordURL());
-            CSVLogManager.getInstance().logMessage(Level.INFO, "Connection to MySQL database initialised!");
         } catch (SQLException e) {
             CSVLogManager.getInstance().logMessage(Level.WARNING, "Problem initialising connection to MySQL database");
             e.printStackTrace();
