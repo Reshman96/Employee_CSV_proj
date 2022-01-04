@@ -33,7 +33,7 @@ public class Employee {
         return empId;
     }
 
-    public void setEmpId(int empId) {
+    private void setEmpId(int empId) {
         this.empId = empId;
     }
 
@@ -41,7 +41,7 @@ public class Employee {
         return namePrefix;
     }
 
-    public void setNamePrefix(String namePrefix) {
+    private void setNamePrefix(String namePrefix) {
         this.namePrefix = namePrefix;
     }
 
@@ -49,7 +49,7 @@ public class Employee {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    private void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -57,7 +57,7 @@ public class Employee {
         return middleInitial;
     }
 
-    public void setMiddleInitial(String middleInitial) {
+    private void setMiddleInitial(String middleInitial) {
         this.middleInitial = middleInitial;
     }
 
@@ -65,7 +65,7 @@ public class Employee {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    private void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -73,7 +73,7 @@ public class Employee {
         return gender;
     }
 
-    public void setGender(String gender) {
+    private void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -81,7 +81,7 @@ public class Employee {
         return email;
     }
 
-    public void setEmail(String email) {
+    private void setEmail(String email) {
         this.email = email;
     }
 
@@ -89,7 +89,7 @@ public class Employee {
         return dob;
     }
 
-    public void setDob(String dob) {
+    private void setDob(String dob) {
         this.dob = LocalDate.parse(dob, DateTimeFormatter.ofPattern("M[M]/d[d]/yyyy"));
     }
 
@@ -97,7 +97,7 @@ public class Employee {
         return dateOfJoining;
     }
 
-    public void setDateOfJoining(String dateOfJoining) {
+    private void setDateOfJoining(String dateOfJoining) {
         this.dateOfJoining = LocalDate.parse(dateOfJoining, DateTimeFormatter.ofPattern("M[M]/d[d]/yyyy"));
     }
 
@@ -105,7 +105,7 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    private void setSalary(int salary) {
         this.salary = salary;
     }
 }

@@ -5,7 +5,15 @@ import employee_csv_proj.controller.Database_management.SQL_Queries.DbInitialSta
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * A Class which is responsible for creating the database in MySQL.
+ */
 public class DatabaseInitialiser {
+
+    /**
+     * Initialises the Employee_CSV_Database database if it doesn't exist already,
+     * uses DB_INITIALISE from @{@link DbInitialStatements}.
+     */
     private static void initialiseDb(){
         try {
             Connection connection = ConnectionManager.dbInitialiseConnection();
@@ -16,6 +24,10 @@ public class DatabaseInitialiser {
         }
     }
 
+    /**
+     * Initialises the employees table in the Employee_CSV_Database database if it doesn't exist already,
+     * uses CREATE_EMPLOYEES_TABLE from @{@link DbInitialStatements}.
+     */
     private static void initialiseEmployeeTable(){
         try {
             Connection connection = ConnectionManager.dbEmployeeConnection();
@@ -26,6 +38,9 @@ public class DatabaseInitialiser {
         }
     }
 
+    /**
+     * Method which combines both initialisations needed to create the database.
+     */
     public static void initialiseDbFirstInstance(){
         DatabaseInitialiser.initialiseDb();
         DatabaseInitialiser.initialiseEmployeeTable();
